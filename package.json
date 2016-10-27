@@ -1,0 +1,27 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "this is an awesome app",
+  "main": "server.js",
+  "scripts": {
+    "test": "\"nodemon server.js\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiranuidev/Nodejs8AMOct.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "kiran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiranuidev/Nodejs8AMOct/issues"
+  },
+  "homepage": "https://github.com/kiranuidev/Nodejs8AMOct#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "underscore": "^1.8.3"
+  }
+}
