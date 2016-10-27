@@ -1,0 +1,6 @@
+commonjs
+-- it helps to load the references for the application.
+  -- it will check in node_modules locally installed in the project.
+  -- it will check in node_modules
+that are came with nodejs installation.
+  -- it will check in the path mentioned.
