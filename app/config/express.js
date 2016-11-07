@@ -27,7 +27,7 @@ var app = express();
 console.log(__dirname);
 var accessLogStream = fs.createWriteStream(path.join(__dirname, '../access.log'), {flags: 'a'})
 
-app.use(morgan('combined', {stream: accessLogStream}))
+app.use(morgan('combined', {stream: accessLogStream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //custom middle ware.

@@ -1,5 +1,5 @@
 
-
+var userDetailModel = "./register.model";
 var registerCtrl ={};
 
 registerCtrl.get=function(req,res){
@@ -9,7 +9,14 @@ registerCtrl.get=function(req,res){
 
     registerCtrl.post=function(req,res){
         console.log(req.body);
-        res.send("<h1>Form posted successfully<h1>");
+        var user = new userDetailModel(req.body);
+        user.save(function(err,data){
+            if(er){
+                res.send("error occurred");
+            }
+            res.send(data);
+        })
+       // res.send("<h1>Form posted successfully<h1>");
     };
 
 
