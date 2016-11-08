@@ -31,8 +31,8 @@ app.use(morgan('combined', {stream: accessLogStream}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //custom middle ware.
-app.use(authorize);
-app.use(authenticate);
+// app.use(authorize);
+// app.use(authenticate);
 
 
 
