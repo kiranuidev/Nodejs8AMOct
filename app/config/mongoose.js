@@ -16,4 +16,6 @@ db.once('open', function() {
 });
 
 require('../register/register.model.js');
+
+require('../blog/blog.model.js');
 };

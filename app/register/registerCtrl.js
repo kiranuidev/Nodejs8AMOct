@@ -9,14 +9,14 @@ registerCtrl.get=function(req,res){
     registerCtrl.post=function(req,res){
         console.log(req.body);
         var user = new userDetailModel(req.body);
-        user.save({firstName:1,lastName:0},function(err,data){
+        user.save(function(err,data){
             if(err){
                 console.log(err);
                 res.send(err);
             }
             res.send(data);
         });
-       // res.send("<h1>Form posted successfully<h1>");
+       
     };
 
 

@@ -42,9 +42,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
+app.use(express.static(path.join(__dirname, '../../public')));
+
 //route registration.
 require("../register/register.route.js")(app);
 require("../products/products.route.js")(app);
 require("../default/default.route.js")(app);
+require("../blog/blog.route.js")(app);
 return app;
 };
