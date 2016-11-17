@@ -13,10 +13,20 @@
 <% for(var i=0;i<blogs.length;i++){ %>
 <div class="panel panel-default">
 <div class="panel-body">
+<div class ="row">
+<div class="col-xs-12">
+ <textarea disabled="true" name="blogContent" id="blogContent_<%= blogs[i]._id %>"> <%= blogs[i].blogContent %></textarea>
+</div>
 
- <textarea name="blogContent" id="blogContent_<%= blogs[i]._id %>"> <%= blogs[i].blogContent %></textarea>
- <button class="btn btn-primary" id="<%= blogs[i]._id %>"  >Update</button>
- </div></div><br>
+ <div class="col-xs-12">
+ <textarea name="comment"
+  id="blogComment_<%= blogs[i]._id %>"> 
+  </textarea>
+</div>
+<div class="col-xs-4">
+ <button class="btn btn-primary" id="<%= blogs[i]._id %>"  >Comment</button>
+ </div>
+ </div><br>
   <% }  } %>
 <script src="app/blog.js"></script>
 

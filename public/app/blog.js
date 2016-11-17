@@ -4,10 +4,12 @@
      $(".btn-primary").click(function(){
          console.log($(this));
          var textContent = $("#blogContent_"+this.id).val();
+         var comment =$("#blogComment_"+this.id).val();
          console.log(textContent);
          var data = {
              id:this.id,
-             blogContent:textContent
+             blogContent:textContent,
+             comment:comment
          };
          postDataToServer(data);
      })
@@ -25,4 +27,6 @@
            }
        })
   };
+
+
 })();
