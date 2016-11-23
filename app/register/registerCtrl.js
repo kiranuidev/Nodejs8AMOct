@@ -4,6 +4,12 @@ var crypto = require('crypto');
 
 registerCtrl.get = function (req, res) {
     //res.send("<h1>Hello Register</h1>");
+    if(req.session.authenticated){
+        console.log("user authenticated");
+    }
+    else{
+        console.log("User didnot authenticated");
+    }
     res.render("register");
 };
 
@@ -49,7 +55,11 @@ registerCtrl.authenticate = function (req, res) {
             }
             else{
               if(data.password==getEncryptedPassword(req.body.password)){
-                  res.send("User Authenticated");
+                 console.log(req.session);
+                  req.session.authenticated.status=true;
+                  //console.log(req.session);
+                  //res.send("User Authenticated");
+                  res.render("default");
               }
               else{
                   res.send("Pasword mismatch");
@@ -61,7 +71,7 @@ registerCtrl.authenticate = function (req, res) {
 function getEncryptedPassword(password){
      var md5 = crypto.createHash('md5');
            password = md5.update(password).digest('hex');
-            console.log(password);
+           
             return password;
 }
 module.exports = registerCtrl;
