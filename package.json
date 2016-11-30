@@ -6,6 +6,9 @@
   "scripts": {
     "test": "nodemon server.js"
   },
+  "engines": {
+    "node": "5.9.1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

@@ -365,3 +365,6 @@
 ::1 - - [28/Nov/2016:03:38:46 +0000] "POST /api/search HTTP/1.0" 200 9423 "http://localhost:9900/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
 ::ffff:127.0.0.1 - - [28/Nov/2016:03:38:53 +0000] "POST /api/search HTTP/1.0" 200 8362 "http://localhost:9900/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
 ::1 - - [28/Nov/2016:03:39:00 +0000] "POST /api/search HTTP/1.0" 200 2837 "http://localhost:9900/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
+::1 - - [30/Nov/2016:03:03:56 +0000] "GET / HTTP/1.1" 200 99 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
+::1 - - [30/Nov/2016:03:03:57 +0000] "GET /favicon.ico HTTP/1.1" 404 24 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
+::1 - - [30/Nov/2016:03:04:00 +0000] "GET /login HTTP/1.1" 200 2336 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
