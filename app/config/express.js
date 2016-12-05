@@ -3,9 +3,31 @@ var path = require("path");
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var fs = require('fs');
-var session = require('express-session')
+var passport = require('passport');
+var flash    = require('connect-flash');
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
 
 module.exports=function (){
+
+    require('./passport')(passport); // pass passport for configuration
+var app = express();
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.json()); // get information from html forms
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('view engine', 'ejs'); // set up ejs for templating
+
+app.use(session({
+    secret: 'ilovescotchscotchyscotchscotch', // session secret
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash());;
 
     function authenticate(req,res,next){
         // if(req.body.user=="kiran"){
@@ -30,7 +52,7 @@ module.exports=function (){
             res.send("You are authenticated but not authorized");
         }
     }
-var app = express();
+
 console.log(__dirname);
 var accessLogStream = fs.createWriteStream(path.join(__dirname, '../access.log'), {flags: 'a'})
 
@@ -62,5 +84,6 @@ require("../register/register.route.js")(app);
 require("../products/products.route.js")(app);
 require("../default/default.route.js")(app);
 require("../blog/blog.route.js")(app);
+require("../user/user.route.js")(app,passport);
 return app;
 };

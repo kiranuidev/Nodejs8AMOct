@@ -3,7 +3,6 @@ var registerCtrl = require("./registerCtrl.js");
 function registerRoute (app){
     app.get("/register",registerCtrl.get);
     app.post("/api/register",registerCtrl.post);
-  
     app.get("/login",registerCtrl.login);
     app.post("/authenticate",registerCtrl.authenticate);
 }
