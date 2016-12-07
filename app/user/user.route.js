@@ -6,6 +6,7 @@ function userRoute (app,passport){
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
+        req.session.userDetails=req.user;
         res.render('profile.ejs', {
             user : req.user
         });
@@ -13,6 +14,8 @@ function userRoute (app,passport){
 
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
+        console.log("Session Details Retrieving");
+        console.log(req.session.userDetails);
         req.logout();
         res.redirect('/');
     });
